@@ -23,6 +23,7 @@
     "cross-env": "^7.0.3",
     "debug": "^4.3.1",
     "dotenv": "^8.2.0",
+    "eslint-config-prettier": "^8.1.0",
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
     "express-response-formatter": "^2.0.2",

@@ -6,8 +6,8 @@ import db from '../models'
 AdminBro.registerAdapter(AdminBroSequelize)
 
 export const adminBro = new AdminBro({
-    databases: [db],
-    rootPath: '/admin',
+  databases: [db],
+  rootPath: '/admin',
 })
 
 const router = AdminBroExpress.buildRouter(adminBro)

@@ -1,2 +1,2 @@
-export {default as generateController} from './generateController'
-export {default as generateRouter} from './generateRouter'
+export { default as generateController } from './generateController'
+export { default as generateRouter } from './generateRouter'

@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "DEBUG=app* cross-env NODE_ENV=development nodemon --exec babel-node ./src/index.js",
-    "sequelize": "sequelize --options-path ./.sequelizerc"
+    "sequelize": "sequelize --options-path ./.sequelizerc",
+    "lint": "eslint ./src",
+    "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
     "@admin-bro/express": "^3.1.0",
@@ -17,9 +19,9 @@
     "@babel/preset-env": "^7.13.10",
     "admin-bro": "^3.4.0",
     "babel-plugin-module-resolver": "^4.1.0",
-    "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
     "cross-env": "^7.0.3",
+    "debug": "^4.3.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
@@ -32,5 +34,10 @@
     "sequelize": "^6.5.0",
     "sequelize-cli": "^6.2.0",
     "tslib": "^2.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }

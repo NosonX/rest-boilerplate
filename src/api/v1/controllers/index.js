@@ -1,1 +1,2 @@
-export {default as UserController} from './UserController'
+/* eslint-disable import/prefer-default-export */
+export { default as UserController } from './UserController'

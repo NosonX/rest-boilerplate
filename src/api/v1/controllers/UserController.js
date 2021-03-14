@@ -1,5 +1,5 @@
 import db from '../models'
-import { generateController } from '../utils';
+import { generateController } from '../utils'
 
 const controller = generateController.create('User', db.User)
 

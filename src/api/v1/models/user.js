@@ -1,6 +1,4 @@
-const {
-  Model,
-} = require('sequelize');
+const { Model } = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
@@ -14,45 +12,48 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  User.init({
-    firstName: {
-      allowNull: false,
-      type: DataTypes.STRING,
-      validate: {
-        len: {
-          args: [0, 50],
-          msg: 'First name cannot has more than 50 characters',
+  User.init(
+    {
+      firstName: {
+        allowNull: false,
+        type: DataTypes.STRING,
+        validate: {
+          len: {
+            args: [0, 50],
+            msg: 'First name cannot has more than 50 characters',
+          },
+          notNull: { args: true, msg: 'First name is required' },
         },
-        notNull: { args: true, msg: 'First name is required' },
+      },
+      lastName: {
+        allowNull: false,
+        type: DataTypes.STRING,
+        validate: {
+          len: {
+            args: [0, 50],
+            msg: 'Last name cannot has more than 50 characters',
+          },
+          notNull: { args: true, msg: 'Last name is required' },
+        },
+      },
+      email: {
+        allowNull: false,
+        type: DataTypes.STRING,
+        unique: true,
+        validate: {
+          isEmail: { args: true, msg: 'Invalid email format' },
+          len: {
+            args: [0, 255],
+            msg: 'Email cannot has more than 255 characters',
+          },
+          notNull: { args: true, msg: 'Email is required' },
+        },
       },
     },
-    lastName: {
-      allowNull: false,
-      type: DataTypes.STRING,
-      validate: {
-        len: {
-          args: [0, 50],
-          msg: 'Last name cannot has more than 50 characters',
-        },
-        notNull: { args: true, msg: 'Last name is required' },
-      },
-    },
-    email: {
-      allowNull: false,
-      type: DataTypes.STRING,
-      unique: true,
-      validate: {
-        isEmail: { args: true, msg: 'Invalid email format' },
-        len: {
-          args: [0, 255],
-          msg: 'Email cannot has more than 255 characters',
-        },
-        notNull: { args: true, msg: 'Email is required' },
-      },
-    },
-  }, {
-    sequelize,
-    modelName: 'User',
-  });
-  return User;
-};
+    {
+      sequelize,
+      modelName: 'User',
+    }
+  )
+  return User
+}

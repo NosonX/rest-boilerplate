@@ -1,4 +1,4 @@
-import { ValidationError } from 'sequelize';
+import { ValidationError } from 'sequelize'
 
 const sendErrorResponse = (e, res) => {
   if (e instanceof ValidationError) {
@@ -13,9 +13,8 @@ const sendErrorResponse = (e, res) => {
   return res.formatter.serverError(e?.message ?? 'An error has occurred')
 }
 
-const sendNotFoundResponse = (res, name) => res.formatter.notFound([
-  { detail: `${name} not found` },
-])
+const sendNotFoundResponse = (res, name) =>
+  res.formatter.notFound([{ detail: `${name} not found` }])
 
 const availableCrudOptions = ['getAll', 'getById', 'create', 'update', 'delete']
 
@@ -98,10 +97,13 @@ const getCrudMethods = (name, model, crudOptions) => {
 const generateController = {
   create: (name, model) => getCrudMethods(name, model, availableCrudOptions),
   omit: (name, model, methodsToOmit) => {
-    const methodsToCreate = availableCrudOptions.filter((val) => !methodsToOmit.includes(val))
+    const methodsToCreate = availableCrudOptions.filter(
+      (val) => !methodsToOmit.includes(val)
+    )
     return getCrudMethods(name, model, methodsToCreate)
   },
-  only: (name, model, methodsToCreate) => getCrudMethods(name, model, methodsToCreate),
+  only: (name, model, methodsToCreate) =>
+    getCrudMethods(name, model, methodsToCreate),
 }
 
 export default generateController

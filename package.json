@@ -1,0 +1,36 @@
+{
+  "name": "admin_bro",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "DEBUG=app* cross-env NODE_ENV=development nodemon --exec babel-node ./src/index.js",
+    "sequelize": "sequelize --options-path ./.sequelizerc"
+  },
+  "dependencies": {
+    "@admin-bro/express": "^3.1.0",
+    "@admin-bro/sequelize": "^1.2.1",
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.10",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "admin-bro": "^3.4.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "express-response-formatter": "^2.0.2",
+    "express-session": "^1.17.1",
+    "http-status-codes": "^2.1.4",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0",
+    "tslib": "^2.1.0"
+  }
+}

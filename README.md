@@ -4,7 +4,6 @@ A simple RESTful API boilerplate with auto generated admin panel based on Sequel
 #### Requirements:
 - **NodeJS** > v12.19.0 (recommended: [NVM Github repository](https://github.com/nvm-sh/nvm))
 - **Docker** in order to run services
-___
 
 ## Run Docker services
 Run command:
